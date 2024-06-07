@@ -1,0 +1,9 @@
+div{
+border: 5px solid black;
+box-shadow: 5 5 10px black;
+background: grey;
+color: white;
+}
+body{
+background: purple;
+}

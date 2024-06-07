@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <!-- Include Twitter Bootstrap and jQuery: -->
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css"/>
+<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.bundle-4.5.2.min.js"></script>
+ 
+<!-- Include the plugin's CSS and JS: -->
+<script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+<link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
+    <link rel="stylesheet" href="style.css">
+
+
+
+<body class="text-center m-auto w-75" onload="cargar()">
+    <br><br><br><br>
+    <div class="text-center ">
+    <table class="table m-auto">
+     <tr>
+      <tr>
+        <td>
+          <button  data-bs-toggle="modal" data-bs-target="#newta" class="btn btn-primary">Unete</button>
+          <select id="categorias" multiple="multiple">
+            <option value="abarrotes">abarrotes</option>
+            <option value="lacteos">lacteos</option>
+            <option value="refrescos">refrescos</option>
+            <option value="papas">papas</option>
+        </select>
+        <button id="bus">Buscar</button>
+        <button id="to">Eliminar filtros</button>  
+        <input type="text" id="bus2">
+        <button id="bus3">Busqueda manual</button>      
+        </td>
+     </tr>
+        <tr>
+        <td>id</td>
+        <td>Nombre</td>
+        <td>Precio</td>
+        <td>Cantidad</td>
+        <td>Proveedor</td>
+        <td>Unidad</td>
+        <td>Categoria</td>
+        <td>Accion</td>
+    </tr>
+       
+     </tr>
+     <tr></tr>
+    
+     <tbody id="lista">
+
+     </tbody>
+    </table>
+
+</body>
+</div>
+<div class="modal" tabindex="-1" id="edita">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Actualizar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <input type="text" id="id"><br>
+            <input type="text" id="enom" placeholder="nombre"><br>
+            <input type="number" min="0"  value="1" id="epre">
+            <input type="number" min="1"  value="1" id="ecan">
+            <select name="" id="epro">
+                <option value="lala">lala</option>
+                <option value="bimbo">bimbo</option>
+                <option value="coca">coca</option>
+                <option value="barcel">barcel</option>
+                <option value="sabritas">sabritas</option>
+            </select>
+            <input type="text" placeholder="Gramos,KG,ml,Litros" id="euni">
+            <select name="" id="ecat">
+                <option value="abarrotes">abarrotes</option>
+                <option value="lacteos">lacteos</option>
+                <option value="refrescos">refrescos</option>
+                <option value="papas">papas</option>
+            </select>
+
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="actualizarContacto()" data-bs-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="newta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar alumnos</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+           <b>Nombre:</b>
+        <input type="text" placeholder="Producto" id="nom">
+        <b>Precio:</b>
+        <input type="number" min="0"  value="1" id="pre">
+
+     
+        <b>Cantidad:</b>
+        <input type="number" min="1"  value="1" id="can">        
+     <b>Provedor:</b>
+        <select name="" id="pro">
+            <option value="lala">lala</option>
+            <option value="bimbo">bimbo</option>
+            <option value="coca">coca</option>
+            <option value="barcel">barcel</option>
+            <option value="sabritas">sabritas</option>
+        </select>
+        <b>Unidad:</b>
+        <input type="text" placeholder="Gramos,KG,ml,Litros" id="uni">
+      <b>Categoria:</b>        
+            <select name="" id="cat">
+                <option value="abarrotes">abarrotes</option>
+                <option value="lacteos">lacteos</option>
+                <option value="refrescos">refrescos</option>
+                <option value="papas">papas|</option>
+            </select>
+    
+            
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="agregar">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+ 
+
+
+
+<script src="productos2.js"></script>
+<script src="sweetalert2.all.min.js"></script>
+<script src="bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#categorias').multiselect();
+  });
+</script>
+</html>
